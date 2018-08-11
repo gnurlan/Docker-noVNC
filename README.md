@@ -1,4 +1,4 @@
-### Build (optional)
+### Build
 ```
 git clone https://github.com/gnurlan/Docker-noVNC.git
 Docker-noVNC
