@@ -2,7 +2,7 @@
 ```
 git clone https://github.com/gnurlan/Docker-noVNC.git
 cd Docker-noVNC
-docker build -t containername .
+docker build -t imagename .
 ```  
 
 ### Run
