@@ -1,8 +1,8 @@
 ### Build
 ```
 git clone https://github.com/gnurlan/Docker-noVNC.git
-Docker-noVNC
-docker build -t Docker-noVNC .
+cd Docker-noVNC
+docker build -t containername .
 ```  
 
 ### Run
