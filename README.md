@@ -7,7 +7,7 @@ docker build -t imagename .
 
 ### Run
 ```
-docker run -id -v ~/hostFolder:/root/dockFolder -p 6080:6080 -e VNC_PASSWD=<YourPassword> --cap-add=NET_ADMIN --name ContainerName Docker-noVNC
+docker run -id -v ~/hostFolder:/root/dockFolder -p 6080:6080 -e VNC_PASSWD=<YourPassword> --cap-add=NET_ADMIN --name ContainerName imagename
 ```  
 
 
