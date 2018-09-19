@@ -38,7 +38,7 @@ RUN \
 
 CMD \
 # X Server
-  Xvfb :1 -screen 0 1600x900x16 & \
+  Xvfb :1 -screen 0 1200x1024x16 & \
 # Openbox
   (export DISPLAY=:1 && openbox-session) & \
 # VNC Server
