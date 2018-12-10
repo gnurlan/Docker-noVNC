@@ -32,6 +32,7 @@ RUN \
   pip install pymysql && \
   touch ~/.Xauthority && \
   pip install pyautogui && \
+  pip install opencv-python && \
 # Clean up the apt cache
   rm -rf /var/lib/apt/lists/*
 
