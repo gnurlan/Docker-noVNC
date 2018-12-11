@@ -13,6 +13,7 @@ RUN \
   iptables \
 #firefox
   firefox \
+  sqlite3 \
 #python
   python python3 \
   python-pip python3-pip scrot python3-tk python3-dev python-xlib \
