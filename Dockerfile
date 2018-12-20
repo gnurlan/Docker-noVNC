@@ -14,6 +14,7 @@ RUN \
 #firefox
   firefox \
   sqlite3 \
+  psmisc \
 #python
   python python3 \
   python-pip python3-pip scrot python3-tk python3-dev python-xlib \
@@ -31,6 +32,7 @@ RUN \
 #pyautogui install
   pip3 install python3-xlib python-xlib && \
   pip install pymysql && \
+  pip install psutil && \
   touch ~/.Xauthority && \
   pip install pyautogui && \
   pip install opencv-python && \
