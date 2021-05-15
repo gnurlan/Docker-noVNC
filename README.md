@@ -13,8 +13,13 @@ docker run -id -v ~/hostFolder:/root/dockFolder -p 6080:6080 -e VNC_PASSWD=<Your
 
 ### ipv6
 ```
-add to file /etc/default/docker
-DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4 --ipv6 --fixed-cidr-v6=someIpv6/80"
+add to file /etc/docker/daemon.json
+{
+  "ipv6": true,
+  "fixed-cidr-v6": "ffff:ffff:ffff:100::/64",
+  "dns": ["8.8.4.4","8.8.8.8"],
+  "ip-forward": true
+}
 ```
 
 
