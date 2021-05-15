@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -15,7 +15,7 @@ RUN \
   firefox \
 #python
   python python3 \
-  python-pip python3-pip scrot python3-tk python3-dev python-xlib \
+  python3-pip scrot python3-tk python3-dev python-xlib \
 # X Server
   xvfb \
 # VNC Server
@@ -23,17 +23,21 @@ RUN \
 # Openbox
   openbox menu \
 # NoVNC with dependencies
-  git net-tools python-numpy && \
+  git net-tools python-numpy
+
+RUN \
+  pip install --upgrade pip && \
   # must switch to a release tag once the ssl-only arg included
   git clone https://github.com/novnc/noVNC /root/noVNC && \
-  git clone --branch v0.8.0 https://github.com/novnc/websockify /root/noVNC/utils/websockify && \
+  git clone --branch v0.9.0 https://github.com/novnc/websockify /root/noVNC/utils/websockify && \
 #pyautogui install
-  pip3 install python3-xlib python-xlib && \
-  pip install pymysql && \
-  touch ~/.Xauthority && \
-  pip install pyautogui && \
+  pip3 install python3-xlib python-xlib
+
+RUN apt-get install -y python3-pymysql #pip install pymysql
+RUN touch ~/.Xauthority
+RUN python3 -m pip install pyautogui #pip install pyautogui
 # Clean up the apt cache
-  rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/lib/apt/lists/*
 
 
 CMD \
