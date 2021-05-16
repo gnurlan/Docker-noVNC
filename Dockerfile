@@ -17,7 +17,9 @@ RUN \
   python python3 \
   python3-pip scrot python3-tk python3-dev python-xlib \
   python3-pymysql \
-  python-numpy \
+  python3-numpy \
+  libopencv-dev \
+  python3-opencv \
 # X Server
   xvfb \
 # VNC Server
@@ -29,10 +31,7 @@ RUN \
 # Clean up the apt cache
   rm -rf /var/lib/apt/lists/*
 
-RUN \
-  pip install --upgrade pip && \
-  #pyautogui install
-  pip3 install python3-xlib python-xlib
+RUN pip install --upgrade pip
 
 RUN \
   # must switch to a release tag once the ssl-only arg included
@@ -40,7 +39,8 @@ RUN \
   git clone --branch v0.9.0 https://github.com/novnc/websockify /root/noVNC/utils/websockify
 
 RUN touch ~/.Xauthority
-RUN python3 -m pip install pyautogui #pip install pyautogui
+RUN python3 -m pip install pyautogui python3-xlib python-xlib #pip install pyautogui
+RUN python3 -m pip install mysql-connector-python
 
 
 
